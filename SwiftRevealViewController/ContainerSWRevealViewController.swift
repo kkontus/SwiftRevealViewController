@@ -20,6 +20,13 @@ class ContainerSWRevealViewController: SWRevealViewController, SWRevealViewContr
         let isRightGeasture = revealController.panGestureRecognizer().isRightToLeftPanGesture(view: self.view)
         
         if let topController = UIApplication.topViewController() {
+            
+            let hasLeftMenu = topController.swRevealViewControllerMenuOptions?.hasLeftMenu
+            let hasRightMenu = topController.swRevealViewControllerMenuOptions?.hasRightMenu
+            
+            return handleGeastures(hasLeftMenu: hasLeftMenu!, hasRightMenu: hasRightMenu!, isLeftGeasture: isLeftGeasture, isRightGeasture: isRightGeasture, isClosed: isClosed)
+            
+            /*
             if topController.isKind(of: ViewController.self) {
                 let hasLeftMenu = topController.swRevealViewControllerMenuOptions?.hasLeftMenu
                 let hasRightMenu = topController.swRevealViewControllerMenuOptions?.hasRightMenu
@@ -44,12 +51,19 @@ class ContainerSWRevealViewController: SWRevealViewController, SWRevealViewContr
                 
                 return handleGeastures(hasLeftMenu: hasLeftMenu!, hasRightMenu: hasRightMenu!, isLeftGeasture: isLeftGeasture, isRightGeasture: isRightGeasture, isClosed: isClosed)
             }
+            if topController.isKind(of: VideoViewController.self) {
+                let hasLeftMenu = topController.swRevealViewControllerMenuOptions?.hasLeftMenu
+                let hasRightMenu = topController.swRevealViewControllerMenuOptions?.hasRightMenu
+                
+                return handleGeastures(hasLeftMenu: hasLeftMenu!, hasRightMenu: hasRightMenu!, isLeftGeasture: isLeftGeasture, isRightGeasture: isRightGeasture, isClosed: isClosed)
+            }
             if topController.isKind(of: OneRightViewController.self) {
                 let hasLeftMenu = topController.swRevealViewControllerMenuOptions?.hasLeftMenu
                 let hasRightMenu = topController.swRevealViewControllerMenuOptions?.hasRightMenu
                 
                 return handleGeastures(hasLeftMenu: hasLeftMenu!, hasRightMenu: hasRightMenu!, isLeftGeasture: isLeftGeasture, isRightGeasture: isRightGeasture, isClosed: isClosed)
             }
+            */
         }
         
         return true

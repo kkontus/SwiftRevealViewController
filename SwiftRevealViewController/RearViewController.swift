@@ -13,6 +13,7 @@ enum LeftMenu: Int {
     case Photo
     case Map
     case Blah
+    case Video
 }
 
 protocol LeftMenuProtocol : class {
@@ -25,7 +26,8 @@ class RearViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var photoViewController: UIViewController!
     var mapViewController: UIViewController!
     var blahViewController: UIViewController!
-    let menus = ["View", "Photo", "Map", "Blah"]
+    var videoViewController: UIViewController!
+    let menus = ["View", "Photo", "Map", "Blah", "Video"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,6 +105,11 @@ class RearViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cell.backgroundColor = UIColor.lightGray
                 cell.isUserInteractionEnabled = true
                 return cell
+            case .Video:
+                //you can add some cell costumisation here
+                cell.backgroundColor = UIColor.lightGray
+                cell.isUserInteractionEnabled = true
+                return cell
             }
         }
         
@@ -118,11 +125,30 @@ class RearViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case .Photo: break
             case .Map: break
             case .Blah: break
+            case .Video: break
             }
         }
     }
     
+    /*
+     * This way we instantiate ViewController when needed, not on SideMenu initialization (viewDidLoad), because we don't want it in memory until we go to that view
+     */
+    func instantiateDynamicallyCreatedViewControllers() {
+        let videoViewController = VideoViewController()
+        videoViewController.view.backgroundColor = UIColor.orange
+        self.videoViewController = UINavigationController(rootViewController: videoViewController)
+    }
+    
+    /*
+     * This way we deallocate ViewController after changing to another ViewController, so we don't keep it in memory all the time
+     */
+    func deallocateDynamicallyCreatedViewControllers() {        
+        self.videoViewController = nil
+    }
+    
     func changeViewController(menu: LeftMenu) {
+        deallocateDynamicallyCreatedViewControllers()
+        
         switch menu {
         case .View:
             self.revealViewController().pushFrontViewController(self.mainViewController, animated: true)
@@ -135,6 +161,10 @@ class RearViewController: UIViewController, UITableViewDataSource, UITableViewDe
             break
         case .Blah:
             self.revealViewController().pushFrontViewController(self.blahViewController, animated: true)
+            break
+        case .Video:
+            instantiateDynamicallyCreatedViewControllers()
+            self.revealViewController().pushFrontViewController(self.videoViewController, animated: true)
             break
         }
     }

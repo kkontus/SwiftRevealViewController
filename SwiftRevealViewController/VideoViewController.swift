@@ -1,24 +1,39 @@
 //
-//  MapViewController.swift
+//  VideoViewController.swift
 //  SwiftRevealViewController
 //
-//  Created by Kristijan Kontus on 23/09/2016.
+//  Created by Kristijan Kontus on 30/09/2016.
 //  Copyright © 2016 kkontus. All rights reserved.
 //
 
 import UIKit
 
-class MapViewController: UIViewController {
+class VideoViewController: UIViewController {
+    
+    required init?(coder aDecoder: NSCoder) {
+        print("\(type(of: self)) was allocated")
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        print("\(type(of: self)) was allocated")
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    deinit {
+        print("\(type(of: self)) was deallocated")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setNavigationBarItemRight()
+        setNavigationBarItemLeft()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

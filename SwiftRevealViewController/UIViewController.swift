@@ -21,6 +21,10 @@ extension UIViewController {
         }
     }
     
+    func clearSwRevealViewControllerMenuOptions() {
+        swRevealViewControllerMenuOptions = nil
+    }
+    
     func setNavigationBarItem() {
         swRevealViewControllerMenuOptions = SWRevealViewControllerMenuOptions(hasLeftMenu: true, hasRightMenu: true)
         

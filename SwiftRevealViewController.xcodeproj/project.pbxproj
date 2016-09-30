@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F3021E01D9E9E8A00752A68 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3021DF1D9E9E8A00752A68 /* VideoViewController.swift */; };
 		6F6CCEC21D95915400324FE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6CCEC11D95915400324FE1 /* AppDelegate.swift */; };
 		6F6CCEC41D95915400324FE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6CCEC31D95915400324FE1 /* ViewController.swift */; };
 		6F6CCEC71D95915400324FE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6CCEC51D95915400324FE1 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F3021DF1D9E9E8A00752A68 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		6F6CCEBE1D95915400324FE1 /* SwiftRevealViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRevealViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6CCEC11D95915400324FE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F6CCEC31D95915400324FE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				6F6CCEDB1D9592D100324FE1 /* PhotoViewController.swift */,
 				6F6CCEDD1D95930800324FE1 /* MapViewController.swift */,
 				6F6CCEDF1D95932500324FE1 /* BlahViewController.swift */,
+				6F3021DF1D9E9E8A00752A68 /* VideoViewController.swift */,
 				6F6CCEE11D95933C00324FE1 /* OneRightViewController.swift */,
 				6F6CCEC51D95915400324FE1 /* Main.storyboard */,
 				6F6CCEC81D95915400324FE1 /* Assets.xcassets */,
@@ -210,6 +213,7 @@
 				6FB9D0A51D99673000064FF0 /* SWRevealViewControllerMenuOptions.swift in Sources */,
 				6F6CCEE41D95935800324FE1 /* RearViewController.swift in Sources */,
 				6F6CCED91D95920500324FE1 /* UIViewController.swift in Sources */,
+				6F3021E01D9E9E8A00752A68 /* VideoViewController.swift in Sources */,
 				6F6CCED61D95918A00324FE1 /* SWRevealViewController.m in Sources */,
 				6FB9D0A11D9920CE00064FF0 /* UIPanGestureRecognizer.swift in Sources */,
 				6F6CCEDC1D9592D100324FE1 /* PhotoViewController.swift in Sources */,

@@ -21,6 +21,12 @@ class BlahViewController: UIViewController {
         setNavigationBarItemLeft()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        clearSwRevealViewControllerMenuOptions()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
