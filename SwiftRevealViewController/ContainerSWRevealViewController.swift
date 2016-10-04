@@ -8,6 +8,24 @@
 
 class ContainerSWRevealViewController: SWRevealViewController, SWRevealViewControllerDelegate {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.delegate = self
+        
+        self.tapGestureRecognizer()
+        self.panGestureRecognizer()
+    }
+    
+    func revealController(_ revealController: SWRevealViewController!, didMoveTo position: FrontViewPosition) {
+        if position == FrontViewPosition.right || position == FrontViewPosition.leftSide {
+            self.frontViewController.view.isUserInteractionEnabled = false
+        } else {
+            self.frontViewController.view.isUserInteractionEnabled = true
+            revealController.view.addGestureRecognizer(revealController.panGestureRecognizer())
+        }
+    }
+    
     func revealControllerPanGestureShouldBegin(_ revealController: SWRevealViewController!) -> Bool {
         let position = revealController.frontViewPosition
         

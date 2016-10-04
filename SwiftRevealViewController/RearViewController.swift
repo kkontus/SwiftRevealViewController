@@ -61,6 +61,8 @@ class RearViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.revealViewController().view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
         tableView.reloadData()
     }
     

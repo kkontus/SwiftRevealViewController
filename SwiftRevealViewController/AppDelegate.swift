@@ -31,9 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         swRevealViewController.setFront(nvc, animated: true)
         swRevealViewController.setRear(rearViewController, animated: true)
         swRevealViewController.setRight(rightViewController, animated: true)
-                
-        swRevealViewController.delegate = swRevealViewController
-        
+             
         self.window?.rootViewController = swRevealViewController
         self.window?.makeKeyAndVisible()
     }
